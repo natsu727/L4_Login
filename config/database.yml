@@ -22,4 +22,12 @@ test:
 
 production:
   <<: *default
-  database: storage/production.sqlite3
+  addapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: hoge_box
+  username: hoge_box_user
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  
+  # database: storage/production.sqlite3
